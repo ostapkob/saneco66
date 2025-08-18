@@ -12,6 +12,9 @@
     background-color: var(--accent-green);
     padding: 0.75rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+    display: flex;
+    justify-content: center;
   }
 
   .menu-toggle {
@@ -22,6 +25,7 @@
     font-size: 1.5rem;
     cursor: pointer;
     padding: 0.5rem;
+    z-index: 11;
   }
 
   ul {
@@ -63,11 +67,12 @@
   }
 
   @media (max-width: 768px) {
+    nav {
+      justify-content: flex-end;
+    }
+
     .menu-toggle {
-      display: block;
-      position: absolute;
-      top: 0.75rem;
-      right: 1rem;
+      display: block !important;
     }
 
     ul {
@@ -79,6 +84,7 @@
       left: 0;
       width: 100%;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 10;
     }
 
     ul.open {
@@ -88,11 +94,15 @@
     li {
       padding: 0.5rem;
       margin: 0;
+      justify-content: flex-start; /* Выравнивание элементов слева */
+      width: 100%; /* Полная ширина для выравнивания */
     }
 
     li a {
       font-size: 0.9rem;
       padding: 0.75rem;
+      justify-content: flex-start; /* Выравнивание текста слева */
+      width: 100%; /* Полная ширина ссылки */
     }
   }
 </style>
@@ -101,21 +111,11 @@
   <button class="menu-toggle" on:click={toggleMenu}>
     <span class="material-icons">{isMenuOpen ? 'close' : 'menu'}</span>
   </button>
-  {#if isMenuOpen}
-    <ul class:open={isMenuOpen} transition:slide={{ duration: 300 }}>
-      <li><a href="#home"><span class="material-icons">home</span>Главная</a></li>
-      <li><a href="#services"><span class="material-icons">build</span>Услуги</a></li>
-      <li><a href="#about"><span class="material-icons">info</span>О нас</a></li>
-      <li><a href="#discounts"><span class="material-icons">local_offer</span>Скидки</a></li>
-      <li><a href="#contact"><span class="material-icons">contact_mail</span>Контакты</a></li>
-    </ul>
-  {:else}
-    <ul>
-      <li><a href="#home"><span class="material-icons">home</span>Главная</a></li>
-      <li><a href="#services"><span class="material-icons">build</span>Услуги</a></li>
-      <li><a href="#about"><span class="material-icons">info</span>О нас</a></li>
-      <li><a href="#discounts"><span class="material-icons">local_offer</span>Скидки</a></li>
-      <li><a href="#contact"><span class="material-icons">contact_mail</span>Контакты</a></li>
-    </ul>
-  {/if}
+  <ul class:open={isMenuOpen} transition:slide={{ duration: 300 }}>
+    <li><a href="#home"><span class="material-icons">home</span>Главная</a></li>
+    <li><a href="#services"><span class="material-icons">build</span>Услуги</a></li>
+    <li><a href="#about"><span class="material-icons">info</span>О нас</a></li>
+    <li><a href="#discounts"><span class="material-icons">local_offer</span>Скидки</a></li>
+    <li><a href="#contact"><span class="material-icons">contact_mail</span>Контакты</a></li>
+  </ul>
 </nav>

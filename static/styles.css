@@ -250,7 +250,7 @@ tr:nth-child(even) {
     border-radius: 8px;
     border: 2px solid var(--accent-green);
     object-fit: cover;
-    max-height: 200px;
+    max-height: 300px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
   }
@@ -265,6 +265,7 @@ tr:nth-child(even) {
     }
 
     .gallery img {
-      max-height: 150px;
+      max-height: 200px;
     }
   }
+
