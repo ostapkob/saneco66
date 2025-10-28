@@ -151,18 +151,6 @@ tr:nth-child(even) {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
 
-  .logo {
-    max-width: 150px;
-    height: auto;
-    border-radius: 8px;
-    background-color: var(--white);
-    padding: 0.5rem;
-    transition: transform 0.3s ease;
-  }
-
-  .logo:hover {
-    transform: scale(1.05);
-  }
 
   nav {
     background-color: var(--accent-green);
@@ -229,9 +217,6 @@ tr:nth-child(even) {
       display: block;
     }
 
-    .logo {
-      max-width: 100px;
-    }
 
     .hero {
       padding: 2rem 1rem;

@@ -1,7 +1,7 @@
 <script lang="ts">
   import Navigation from '$lib/components/Navigation.svelte';
   export const prerender = true;
-  import favicon from '$lib/assets/favicon.svg';
+  import favicon from '/favicon.ico';
 
   let { children } = $props();
 </script>
@@ -24,12 +24,7 @@
   }
 
   .logo {
-    max-width: 150px;
-    height: auto;
-    border-radius: 8px;
-    background-color: var(--white);
-    padding: 0.5rem;
-    transition: transform 0.3s ease;
+    max-width: 450px;
   }
 
   .logo:hover {
@@ -47,17 +42,13 @@
 
   @media (max-width: 768px) {
     .logo {
-      max-width: 100px;
+      max-width: 200px;
     }
   }
 </style>
 
 <header>
-  <img src="/logo.jpg" alt="Saneco66 Logo" class="logo" />
-  <div>
-    <h1>Saneco66</h1>
-    <p>Профессиональная дезинсекция для вашего комфорта</p>
-  </div>
+  <img src="/header.png" alt="Saneco66 Logo" class="logo" />
 </header>
 
 <Navigation />
